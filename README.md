@@ -1,27 +1,25 @@
-# Astro - Intro/Me
-Crisp, minimal, personal blog theme for Astro
-https://github.com/wkocjan/gatsby-theme-intro
-- [x] Re-factor/Remove non-needed components
-- [x] Read Yaml
-- [x] TailwindcSS Themes
-- [x] PDF Download
-- [] Secure PDF download
-- [] Print CSS
-- [] Form Spree for contact
+# Astro - Me
+Crisp, minimal, personal portfolio theme for Astro
 <img src="./public/astro-banner.png" alt="Astro Banner" />
 
 
-Astro Ink is a minimal theme created to serve minimalistic markdown-based blog needs. It ships with almost all the basic Astro components that you might need while creating light-weight, performant, personal blogs, that focus on shipping less Javascript by default.
+Astro Me is a minimal theme created to serve minimalistic personal portfolio needs. It ships with almost all the basic Astro components that you might need while creating light-weight, performant, personal portfolios, that focus on shipping less Javascript by default.
 
-It's hugely inspired by [Hugo](https://github.com/knadh/hugo-ink)'s Ink theme and strives to remain light, while providing the basis for a beautiful, minimal blog.
+It's hugely inspired by [Gatsby Intro](https://github.com/wkocjan/gatsby-theme-intro)'s and strives to remain light, while providing the basis for a beautiful, minimal blog. It even supports features like "Dark Mode" and "Resume Download" on top.
 
 ## Features
-- __Minimal, Crisp, Markdown-Blog Ready__
-- __Uses `astro@next`__ - It uses Astro's [next](https://next.docs.astro.build/getting-started) APIs under the hood
+- __Minimal, Crisp, Markdown Ready__
+- __Data configuration through YAML files__ -
 - __Svelte Ready__ - In its effort to remain light-weight, performant, and more approachable from Astro's POV, Svelte is used for interactive components like the theme switcher
 - __Modular__ - The structure is highly modular, with components doing just one job, and one job well.
-- __Collection + Dynamic Pages__ - It's ready with Next.js like dynamic pages, to support a tag-based classification system with paginated results, all configurable
-- __Dark Mode & Color Codes (beta)__ - It supports dark mode, and 6+ color modes that could be configured using `tailwind.config.js`. Remember to restart when developing, and enable just one group of colors at a time. To customize the blog section, add any of the Tailwind Typography's `prose-{color}` classes as referred [here](./src/components/Prose.astro)
+- __Color Themes__ - It supports 6+ color themes that could be configured using `tailwind.config.js`. Remember to restart when developing.
+- __Dark Mode__ - All the color themes, support the Dark mode
+- __Print Ready__ - You can print your one-page portfolio through the browser's print function. The CSS will adjust as per the print media.
+- __Download Resume__ - You can even download the resume by visiting `/site-url/api/resume`
 
-To work with function, run `vercel dev`
-To work with app, run `yarn start`
+_More features coming soon_
+- [] Form Spree for contact
+- [] Improved styles
+
+## Development Instructions
+Unlike the default Astro project settings, this theme uses `yarn start` instead of `yarn dev` for local development to be compatible with `vercel dev` for local function development.
