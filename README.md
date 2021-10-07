@@ -19,8 +19,9 @@ It's hugely inspired by [Gatsby Intro](https://github.com/wkocjan/gatsby-theme-i
 - __Download Resume__ - You can even download the resume by visiting `/site-url/api/resume`
 
 _More features coming soon_
-- [] Form Spree for contact
-- [] Improved styles
+
+- [ ] Form Spree for contact
+- [ ] Improved styles
 
 ## Development Instructions
 Unlike the default Astro project settings, this theme uses `yarn start` instead of `yarn dev` for local development to be compatible with `vercel dev` for local function development.
