@@ -1,0 +1,12 @@
+---
+const { tags } = Astro.props
+---
+
+{tags.map(tag => (
+    <li
+        class="inline-block px-3 py-1 mr-1 mt-1 font-medium text-xs rounded-lg border border-primary print:px-1 print:rounded-none print:border-none print:uppercase text-gray-900 dark:text-gray-200"
+        key={tag}
+    >
+        {tag}
+    </li>
+))}

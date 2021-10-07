@@ -1,0 +1,33 @@
+---
+    import ProjectStatus from './ProjectStatus.astro'
+    import ProjectTags from './ProjectTags.astro'
+    import ProjectIcon from './ProjectIcon.astro'
+    const { project } = Astro.props
+---
+<div class="border-t-4 border-line relative flex flex-wrap p-4 lg:p-8 bg-no-repeat text-sm bg-gray-100 dark:bg-gray-800 bg-opacity-30 dark:bg-opacity-30 border-primaryLight dark:border-primaryDark shadow-2xl print:shadow-none">
+      {project.image && (
+        <div class="w-full pb-4 lg:w-2/5 lg:pr-8 lg:pb-0 print:hidden">
+          <img src={project.image} alt={project.name} />
+        </div>
+      )}
+      <div class="lg:flex-1">
+        <h4 class="font-bold text-xl text-primaryDark dark:text-primaryLight">{project.name}</h4>
+        {project.url && (
+          <a
+            class="underline break-all hover:opacity-75 transition-opacity duration-150 text-primaryDark dark:text-primaryLight"
+            href={project.url}
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            {project.url}
+          </a>
+        )}
+        <p class="w-full py-4 whitespace-pre-line text-gray-900 dark:text-gray-200">{project.description}</p>
+        <ul class="pr-2">
+          {project.status && <ProjectStatus status={project.status} />}
+          {project.tags && <ProjectTags tags={project.tags} />}
+        </ul>
+
+        {project.icon && <ProjectIcon icon={project.icon} />}
+      </div>
+    </div>

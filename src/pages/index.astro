@@ -1,0 +1,66 @@
+---
+
+import DefaultPageLayout from '$/layouts/default.astro'
+import Summary from '../components/Summary.astro'
+import Skills from '../components/Skills.astro'
+import ProjectList from '../components/Project/ProjectList.astro'
+import WorkHistory from '../components/WorkHistory.astro'
+import Tools from '../components/Tools.astro'
+import About from '../components/About.astro'
+import Sidebar from '../components/Sidebar.astro'
+import { getIntroData } from '../utils'
+
+const title = 'Home'
+const description = 'Astro-Ink is a crisp, minimal, personal blog theme for Astro'
+
+
+    const profile = {
+        name: 'John Doe',
+        image: {
+            publicURL: ''
+        },
+        profession: 'Manager Technology',
+        social: [{
+            url: 'https://twitter.com/aftabbuddy'
+        }],
+        company: 'Publicis Sapient'
+    }
+
+const intro = await getIntroData()
+---
+<DefaultPageLayout content={{ title, description, profile: { ...intro.profile, social: intro.social } }}>
+    <div class="md:max-w-screen-sm lg:max-w-screen-xl mx-auto px-4 flex flex-wrap pt-4 my-8">
+            <Sidebar profile={intro.profile} social={intro.social} />
+
+            <div class="lg:w-2/3 lg:pl-8 xl:pl-12">
+            <Summary profile={intro.profile} />
+            <div class="print:flex print:flex-col-reverse">
+                <div class="flex flex-wrap">
+                    <div class="md:w-3/4 print:w-3/4 pb-12 md:pr-8 lg:pr-12 xl:pr-20">
+                    { intro?.profile?.skills && <Skills skills={intro.profile.skills} />}
+                    </div>
+                    <div class="md:w-1/4 print:w-1/4 pb-12 print:text-right">
+                    { intro?.profile?.tools && <Tools tools={intro.profile.tools} />}
+                    </div>
+                </div>
+
+                {intro.profile.about && <About about={intro.profile.about} />}
+            </div>
+            <ProjectList projects={intro.projects} />
+            <WorkHistory history={intro['work-history']} />
+            <!--<ContactForm
+                formspreeEndpoint={formspreeEndpoint}
+                budget={profile.budget}
+            />-->
+            </div>
+    </div>
+</DefaultPageLayout>
+
+<style>
+    .page__actions {
+        @apply flex justify-center md:justify-end py-6
+    }
+    .action__go-to-blog {
+        @apply text-base uppercase text-gray-500 dark:text-gray-400 hover:underline
+    }
+</style>

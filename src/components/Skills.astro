@@ -1,0 +1,19 @@
+---
+    import SkillSvg from './Skill.astro'
+    import SectionHeading from './SectionHeading.astro'
+    const { skills } = Astro.props
+---
+<SectionHeading>
+    Top skills
+</SectionHeading>
+<ul class="grid grid-cols-3 gap-2 md:gap-4">
+    {skills.map((skill, i) => (
+        <li class={`relative flex justify-center items-center rounded-full border-skill-${i} bg-gradient-to-r from-gray-100 to-primaryLight dark:from-primaryDark dark:to-gray-800 shadow-inner`}
+  >
+    <span class="absolute font-header font-semibold text-sm md:text-base px-2 text-center bg-gradient-to-r from-gray-100 to-primaryLight dark:from-primaryDark dark:to-gray-800 text-primaryDark dark:text-primaryLight shadow-md rounded-md">
+      {skill}
+    </span>
+    <SkillSvg class={`w-full text-skill-${i} opacity-75 m-2`} />
+  </li>
+    ))}
+</ul>

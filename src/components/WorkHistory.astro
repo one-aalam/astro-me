@@ -1,0 +1,82 @@
+---
+import SectionHeading from './SectionHeading.astro'
+import SvgIcon from './SvgIcon.astro'
+const { history } = Astro.props
+---
+<SectionHeading>
+    <span class="flex justify-center print:justify-start">
+        Work history
+    </span>
+</SectionHeading>
+<div class="history flex flex-col relative pt-6 pb-6">
+{history.map(({ company, period, position, url }, i) => (
+    <div class="history-entry relative w-1/2 py-4 print:border-l-4 print:border-primaryLight print:mb-2">
+        <span class="dot-bg">
+            <span class="dot"></span>
+        </span>
+        {url ? (
+            <h4 class="subpixel-antialiased">
+            <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:opacity-75 transition-opacity duration-150 text-primaryDark dark:text-primaryLight"
+            >
+                {company}
+            </a>
+            </h4>
+        ) : (
+            <h4 class="subpixel-antialiased text-primaryDark dark:text-primaryLight">{company}</h4>
+        )}
+
+        {position && (
+            <h5 class="text-sm font-normal mb-1 text-gray-800 dark:text-gray-300">{position}</h5>
+        )}
+        {period && (
+            <span class="text-sm font-medium opacity-50 text-gray-700 dark:text-gray-300">
+                {period}
+            </span>
+        )}
+    </div>
+))}
+</div>
+
+<style>
+.history:before {
+  @apply absolute block top-0 bottom-0 bg-primary dark:bg-primaryLight w-0.5 print:w-0 left-2/4 -translate-x-px;
+  content: "";
+}
+
+.history-entry:nth-child(odd) {
+  @apply self-end pl-12 print:self-start print:pl-6;
+}
+
+.history-entry:nth-child(even) {
+  @apply self-start pr-12 text-right print:text-left print:pl-6;
+}
+
+.dot-bg {
+  @apply w-14 h-14 absolute inline-flex rounded-full items-center justify-center print:hidden transform -translate-y-1/2 bg-gradient-to-br from-gray-100 to-primaryLight dark:from-primaryDark dark:to-gray-800;
+  top: 50%;
+}
+
+.dot {
+    @apply w-5 h-5 bg-primaryLight dark:bg-primaryDark rounded-full;
+}
+
+.history-entry:nth-child(odd) > .dot-bg {
+    @apply left-0 -translate-x-1/2
+}
+
+.history-entry:nth-child(even) > .dot-bg {
+    @apply right-0 translate-x-1/2
+}
+
+.history-entry:first-child .dot-bg {
+    @apply bg-primary dark:bg-primaryDark
+}
+
+.history-entry:first-child .dot {
+    @apply bg-green-500 shadow-inner
+}
+</style>

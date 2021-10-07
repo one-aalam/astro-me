@@ -1,0 +1,13 @@
+---
+    const { status } = Astro.props
+---
+<li class="inline-block px-3 py-1 mr-1 mt-1 font-medium text-xs rounded-lg border border-back">
+    <span
+      class={`inline-block w-2 h-2 rounded-full mr-2 ${
+        status === "live" ? "bg-green-500" : "bg-orange-500"
+      }`}
+    ></span>
+    <span class="text-gray-900 dark:text-gray-200">
+        Status: {status}
+    </span>
+</li>

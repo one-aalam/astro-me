@@ -1,0 +1,18 @@
+---
+    import Project from './Project.astro'
+    import SectionHeading from '../SectionHeading.astro'
+    const { projects } = Astro.props
+---
+    <section class="project__list">
+        <SectionHeading>
+            Projects
+        </SectionHeading>
+        {projects.map((project) => (
+            <Project project={project} />
+        ))}
+    </section>
+    <style>
+        .project__list {
+            @apply flex flex-col gap-8 mb-12
+        }
+    </style>

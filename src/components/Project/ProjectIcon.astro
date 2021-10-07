@@ -1,0 +1,13 @@
+---
+import SocialIcon from '../SocialIcon.astro'
+import AppTypeIcon from '../AppTypeIcon.astro'
+
+const { icon } = Astro.props
+---
+<span class="absolute right-0 bottom-0 mb-5 mr-5 text-back print:hidden">
+    {icon === "github" ? (
+        <SocialIcon name="github"/>
+    ) : (
+        <AppTypeIcon name="website"/>
+    )}
+</span>

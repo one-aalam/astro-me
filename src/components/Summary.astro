@@ -1,0 +1,40 @@
+---
+import SectionHeading from './SectionHeading.astro'
+const { profile } = Astro.props
+---
+<div class="flex pb-8 print:py-2">
+    <div class="w-1/2 pr-4 lg:pr-12 border-r print:border-none border-line">
+        <SectionHeading>
+            Company
+        </SectionHeading>
+        <h3 class="font-header font-light text-2xl print:text-base text-gray-900 dark:text-gray-200 leading-tight">
+            {profile.company}
+        </h3>
+        {profile.for_hire &&
+            <div class="font-header font-semibold text-xs uppercase pt-2 print:hidden">
+                <span class="inline-block w-2 h-2 rounded-full mr-1 bg-green-500"></span>
+                <span class="text-gray-700 dark:text-gray-300">Available for hire</span>
+            </div>
+        }
+    </div>
+    <div class="w-1/2 pl-4 lg:pl-12 print:text-right">
+        <SectionHeading>
+            Focused on
+        </SectionHeading>
+        <div class="font-header font-light text-2xl print:text-base text-gray-900 dark:text-gray-200 leading-tight">
+            {profile.focus}
+            {profile.focus_url &&
+                <div>
+                    <a
+                        aria-label="website"
+                        class="inline-block text-front opacity-50 hover:opacity-75 h-4 w-4 transition-opacity duration-150"
+                        href={profile.focus_url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

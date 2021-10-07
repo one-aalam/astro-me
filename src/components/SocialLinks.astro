@@ -1,0 +1,21 @@
+---
+    import SocialIcon from './SocialIcon.astro'
+    const { social } = Astro.props
+---
+    <div class="pl-3">
+      {social.map(({ name, url }, i) => {
+          const colorsClass =  i % 2 === 0 ? `bg-primary text-primaryLight` : `bg-primaryDark text-primaryLight`
+        return (
+          <a
+            aria-label={name}
+            class={`inline-flex w-12 h-12 justify-center items-center rounded-full -ml-3 ${colorsClass} hover:shadow-lg transition-shadow duration-150`}
+            href={url}
+            key={name}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <SocialIcon name={name} class="w-6 h-6" />
+          </a>
+        )
+      })}
+    </div>

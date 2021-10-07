@@ -1,0 +1,22 @@
+initials: AA
+name: Aftab Alam
+profession: Manager Technology
+image:
+  publicURL: https://pbs.twimg.com/profile_images/1378583612925206534/1BxJ61E0_400x400.jpg
+location: New Delhi, India
+relocation: true
+company: Publicis Sapient
+for_hire: true
+focus: Learning React
+focus_url: https://react.org
+about: |
+  Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.
+  User generated content in real-time will have multiple touchpoints for offshoring. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+skills:
+  - Angular
+  - Typescript
+  - HTML/CSS
+tools:
+  - Astro
+  - VSCode
+  - Vercel
