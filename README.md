@@ -5,7 +5,7 @@ Crisp, minimal, personal portfolio theme for Astro
 
 Astro Me is a minimal theme created to serve minimalistic personal portfolio needs. It ships with almost all the basic Astro components that you might need while creating light-weight, performant, personal portfolios, that focus on shipping less Javascript by default.
 
-It's hugely inspired by [Gatsby Intro](https://github.com/wkocjan/gatsby-theme-intro) and strives to remain light, while providing the basis for a beautiful, minimal blog. It even supports features like "Dark Mode" and "Resume Download" on top.
+It's hugely inspired by [Gatsby Intro](https://github.com/wkocjan/gatsby-theme-intro) and strives to remain light, while providing the basis for a beautiful, minimal portfolio. It even supports features like "Dark Mode" and "Resume Download" on top.
 
 ## Features
 - __Minimal, Crisp, Markdown Ready__
